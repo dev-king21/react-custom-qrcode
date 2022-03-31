@@ -1,0 +1,46 @@
+{
+  "name": "react-custom-qrcode",
+  "version": "2.7.0",
+  "description": "React component to generate a QR Code customizable with logo and more properties",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-king21/react-custom-qrcode.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "qrcode",
+    "custom",
+    "logo",
+    "opacity",
+    "padding",
+    "eye"
+  ],
+  "author": "DevKing21",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dev-king21/react-custom-qrcode/issues"
+  },
+  "homepage": "https://github.com/dev-king21/react-custom-qrcode#readme",
+  "devDependencies": {
+    "@types/react": "^16.4.7",
+    "@types/react-dom": "^16.0.6",
+    "typescript": "^3.0.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "dependencies": {
+    "lodash.isequal": "^4.5.0",
+    "qrcode-generator": "^1.4.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.4.1",
+    "react-dom": ">=16.4.1"
+  }
+}

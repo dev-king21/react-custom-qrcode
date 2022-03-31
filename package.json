@@ -1,5 +1,5 @@
 {
-  "name": "react-custom-qrcode",
+  "name": "@jackybaby/react-custom-qrcode",
   "version": "2.7.0",
   "description": "React component to generate a QR Code customizable with logo and more properties",
   "main": "dist/index.js",
@@ -42,5 +42,8 @@
   "peerDependencies": {
     "react": ">=16.4.1",
     "react-dom": ">=16.4.1"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }

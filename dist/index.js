@@ -95,6 +95,7 @@ var QRCode = /** @class */ (function (_super) {
         var lineWidth = Math.ceil(cellSize);
         var radiiOuter;
         var radiiInner;
+        var fgColor = this.props.fgColor;
         if (typeof radii !== 'number' && !Array.isArray(radii)) {
             radiiOuter = radii.outer || 0;
             radiiInner = radii.inner || 0;
@@ -106,10 +107,11 @@ var QRCode = /** @class */ (function (_super) {
         var y = (row * cellSize) + offset;
         var x = (col * cellSize) + offset;
         var size = cellSize * 7;
-        ctx.fillStyle = colors[0];
+        ctx.strokeStyle = colors[0];
         // Outer box
         this.drawRoundedSquare(lineWidth, x, y, size, radiiOuter, false, ctx);
         ctx.fillStyle = colors[1];
+        ctx.strokeStyle = colors[1];
         // Inner box
         size = cellSize * 3;
         y += cellSize * 2;

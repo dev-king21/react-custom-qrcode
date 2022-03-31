@@ -1,4 +1,5 @@
 # react-qrcode-logo
+
 Typescript React component to generate a customizable QR Code.
 
 <div style="display: flex; flex-direction: row;">
@@ -10,13 +11,14 @@ Typescript React component to generate a customizable QR Code.
 ## Installation
 
 ```bash
-npm install --save react-qrcode-logo
+npm install --save @jackybaby/react-custom-qrcode
 ```
+
 ## Usage
 
 ```javascript
-import * as React from 'react';
-import { QRCode } from 'react-qrcode-logo';
+import * as React from "react";
+import { QRCode } from "@jackybaby/react-custom-qrcode";
 
 React.render(
   <QRCode value="https://github.com/gcoro/react-qrcode-logo" />,
@@ -25,23 +27,25 @@ React.render(
 ```
 
 ## Props
-| Prop        | Type                                  | Default value        | Description    |
-| ------------|---------------------------------------| ---------------------|-----|
-| `value`       | `string`                                | `https://reactjs.org/` | The value encoded in the QR Code. When the QR Code is decoded, this value will be returned |
-| `ecLevel`        | `L` &#124; `M` &#124; `Q` &#124; `H`              |   `M`              | The error correction level of the QR Code |
-| `enableCORS`         | `boolean`                 |   `false`              | Enable crossorigin attribute |
-| `size`        | `number` (in pixels)                    |   `150`                | The size of the QR Code |
-| `quietZone`     | `number` (in pixels)                    |   `10`                 | The size of the quiet zone around the QR Code. This will have the same color as QR Code bgColor |
-| `bgColor`     | `string` (css color)                    | `#FFFFFF`              | Background color |
-| `fgColor`     | `string` (css color)                    | `#000000`              | Foreground color |
-| `logoImage`   | `string` (src attribute)                |                      | The logo image. It can be a url/path or a base64 value |
-| `logoWidth`   | `number` (in pixels)                    | `size * 0.2`           | Logo image width |
-| `logoHeight`  | `number` (in pixels)                    | `logoWidth`                     | Logo image height |
-| `logoOpacity` | `number` (css opacity 0 <= x <= 1)      | `1`                    | Logo opacity. This allows you to modify the transparency of your logo, so that it won't compromise the readability of the QR Code |
-| `removeQrCodeBehindLogo`         | `boolean`                 |   `false`              | Removes points behind the logo and adds a border with no points around the logo  |
-| `qrStyle` | `squares` &#124; `dots` | `squares`  | Style of the QR Code modules |
-| `eyeRadius` | `number` &#124; `number[]` &#124; `number[][]` |  | The corner radius for the positional patterns (the three "eyes" around the QR code). See more details below |
-| `id` | `string` | `react-qrcode-logo` | Optional custom id for the QRCode canvas. You can use this prop if you have multiple QRCodes and need to differentiate them |
+
+| Prop                     | Type                                           | Default value          | Description                                                                                                                       |
+| ------------------------ | ---------------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `value`                  | `string`                                       | `https://reactjs.org/` | The value encoded in the QR Code. When the QR Code is decoded, this value will be returned                                        |
+| `ecLevel`                | `L` &#124; `M` &#124; `Q` &#124; `H`           | `M`                    | The error correction level of the QR Code                                                                                         |
+| `enableCORS`             | `boolean`                                      | `false`                | Enable crossorigin attribute                                                                                                      |
+| `size`                   | `number` (in pixels)                           | `150`                  | The size of the QR Code                                                                                                           |
+| `quietZone`              | `number` (in pixels)                           | `10`                   | The size of the quiet zone around the QR Code. This will have the same color as QR Code bgColor                                   |
+| `bgColor`                | `string` (css color)                           | `#FFFFFF`              | Background color                                                                                                                  |
+| `fgColor`                | `string` (css color)                           | `#000000`              | Foreground color                                                                                                                  |
+| `logoImage`              | `string` (src attribute)                       |                        | The logo image. It can be a url/path or a base64 value                                                                            |
+| `logoWidth`              | `number` (in pixels)                           | `size * 0.2`           | Logo image width                                                                                                                  |
+| `logoHeight`             | `number` (in pixels)                           | `logoWidth`            | Logo image height                                                                                                                 |
+| `logoOpacity`            | `number` (css opacity 0 <= x <= 1)             | `1`                    | Logo opacity. This allows you to modify the transparency of your logo, so that it won't compromise the readability of the QR Code |
+| `removeQrCodeBehindLogo` | `boolean`                                      | `false`                | Removes points behind the logo and adds a border with no points around the logo                                                   |
+| `qrStyle`                | `squares` &#124; `dots`                        | `squares`              | Style of the QR Code modules                                                                                                      |
+| `eyeColor`               | `string` &#124; `string[]`                     |                        | The color for the inner and out parts of positional patterns (the three "eyes" around the QR code). See more details below        |
+| `eyeRadius`              | `number` &#124; `number[]` &#124; `number[][]` |                        | The corner radius for the positional patterns (the three "eyes" around the QR code). See more details below                       |
+| `id`                     | `string`                                       | `react-qrcode-logo`    | Optional custom id for the QRCode canvas. You can use this prop if you have multiple QRCodes and need to differentiate them       |
 
 ### About eyeRadius
 
@@ -49,10 +53,11 @@ Give the positional pattern custom radii. You can either set one radius for all 
 specify a radius for each corner of each eye.
 
 Simple example:
+
 ```jsx
 <QRCode
-	value="https://github.com/gcoro/react-qrcode-logo"
-	eyeRadius={5} // 5 pixel radius for all corners of all positional eyes
+  value="https://github.com/gcoro/react-qrcode-logo"
+  eyeRadius={5} // 5 pixel radius for all corners of all positional eyes
 />
 ```
 
@@ -88,10 +93,22 @@ eyeRadius={[
 ]}
 ```
 
+```jsx
+// Color for both parts (inner, out) of eyes
+eyeColor = "#ffffff";
+```
+
+```jsx
+// Color for each part of eyes
+eyeColor={['#ff0000', '#00ff00']}
+```
+
 ## Usage example
+
 You can find a very simple demo project [here](https://github.com/gcoro/QRCodeCustomizer).
 
 ## Contributing
+
 Thanks to everyone who contributed :) PRs and suggestions are welcome.
 
 <table>
@@ -132,4 +149,5 @@ Thanks to everyone who contributed :) PRs and suggestions are welcome.
 </table>
 
 ## More credits
+
 This package was inspired by [cssivision/qrcode-react](https://github.com/cssivision/qrcode-react) and [zpao/qrcode.react](https://github.com/zpao/qrcode.react). Also looked up some parts from [kazuhikoarase/qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) (which this package depends on).

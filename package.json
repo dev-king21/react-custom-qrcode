@@ -20,7 +20,9 @@
     "logo",
     "opacity",
     "padding",
-    "eye"
+    "eye",
+    "eyecolor",
+    "eyeradius"
   ],
   "author": "DevKing21",
   "license": "MIT",

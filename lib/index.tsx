@@ -155,7 +155,7 @@ export class QRCode extends React.Component<IProps, {}> {
         this.drawRoundedSquare(lineWidth, x, y, size, radiiOuter, false, ctx);
 
         ctx.fillStyle = colors[1];
-        ctx.strokeStyle = fgColor;
+        ctx.strokeStyle = colors[1];
         // Inner box
         size = cellSize * 3;
         y += cellSize * 2;
